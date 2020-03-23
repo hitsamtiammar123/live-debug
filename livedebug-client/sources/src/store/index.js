@@ -1,13 +1,13 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-
-
+import Vue from 'vue'
 
 const covid = axios.create({
   // baseURL: 'http://localhost:3000',
   baseURL: 'https://ziterz-covid19.herokuapp.com'
 })
+
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
@@ -26,7 +26,7 @@ export default new Vuex.Store({
       state.globals = payload
     },
     FETCH_COUNTRIES (state, payload) {
-      state.countries = state
+      state.countries = payload
     }
   },
   actions: {

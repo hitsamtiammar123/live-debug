@@ -1,4 +1,4 @@
-module.exports = function(req, res, next) {
+module.exports = function(err,req, res, next) {
   const stringifiedErr = JSON.stringify(err);
   if (err.code === 404) {
     res.status(err.code).json({

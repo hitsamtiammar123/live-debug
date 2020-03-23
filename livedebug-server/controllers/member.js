@@ -9,6 +9,14 @@ class MemberController {
       })
       .catch(next);
   }
+
+  static find(req,res,next){
+    Member.findAll()
+    .then((members)=>{
+      res.status(200).json(members);
+    })
+    .catch(next)
+  }
 }
 
 module.exports = MemberController;
