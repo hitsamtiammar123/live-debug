@@ -8,8 +8,8 @@ const errorHandler = require('./middlewares/error-handler');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use(errorHandler);
 app.use('/', routes);
+app.use(errorHandler);
 
 
 module.exports = app;
